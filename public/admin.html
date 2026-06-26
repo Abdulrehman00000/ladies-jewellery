@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zara Jewels Admin Dashboard | Order Control Panel</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet (using the same global theme but admin specific dashboard widgets) -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Admin specific tweaks */
+    body {
+      background-color: #0b1311;
+      color: #e2e8f0;
+    }
+    .admin-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .admin-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .admin-logo {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .admin-title-badge {
+      background-color: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--accent-color);
+      color: var(--accent-color);
+      padding: 0.3rem 1rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .stat-card {
+      background-color: var(--primary-color);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 1.5rem;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .stat-card:hover {
+      border-color: var(--accent-color);
+    }
+    .stat-info h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .stat-val {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--bg-cream);
+    }
+    .stat-icon-box {
+      font-size: 2.2rem;
+      color: var(--accent-color);
+      opacity: 0.8;
+    }
+    /* Controls area */
+    .controls-card {
+      background-color: rgba(8, 28, 21, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .search-input-wrapper {
+      flex-grow: 1;
+      position: relative;
+    }
+    .search-input-wrapper i {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+    .search-input {
+      width: 100%;
+      background-color: rgba(8, 28, 21, 0.8);
+      border: 1px solid rgba(250, 246, 240, 0.1);
+      color: var(--bg-cream);
+      padding: 0.8rem 1rem 0.8rem 2.5rem;
+      border-radius: 4px;
+    }
+    .search-input:focus {
+      border-color: var(--accent-color);
+    }
+    .filter-select {
+      background-color: rgba(8, 28, 21, 0.8);
+      border: 1px solid rgba(250, 246, 240, 0.1);
+      color: var(--bg-cream);
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .refresh-btn {
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      font-weight: 600;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+    }
+    .refresh-btn:hover {
+      background-color: var(--accent-hover);
+    }
+    /* Table styling */
+    .table-responsive {
+      overflow-x: auto;
+      background-color: rgba(8, 28, 21, 0.3);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      border-radius: 4px;
+      box-shadow: var(--shadow-md);
+    }
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .admin-table th, .admin-table td {
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid rgba(250, 246, 240, 0.05);
+    }
+    .admin-table th {
+      background-color: var(--primary-color);
+      color: var(--accent-color);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+    .admin-table tr:hover td {
+      background-color: rgba(212, 175, 55, 0.02);
+    }
+    /* Status Badges */
+    .status-select {
+      background-color: rgba(8, 28, 21, 0.8);
+      color: var(--bg-cream);
+      border: 1px solid rgba(250, 246, 240, 0.1);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .status-select.pending { color: #f39c12; border-color: #f39c12; }
+    .status-select.approved { color: #2ecc71; border-color: #2ecc71; }
+    .status-select.shipped { color: #3498db; border-color: #3498db; }
+    .status-select.cancelled { color: #e74c3c; border-color: #e74c3c; }
+
+    .items-list-cell {
+      max-width: 250px;
+      font-size: 0.85rem;
+    }
+    .items-list-cell ul {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+    }
+    .cust-info-cell p {
+      margin-bottom: 0.25rem;
+    }
+    .cust-info-cell i {
+      color: var(--accent-color);
+      width: 18px;
+    }
+    .tid-badge {
+      background-color: rgba(250, 246, 240, 0.05);
+      border: 1px solid rgba(250, 246, 240, 0.1);
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .tid-badge:hover {
+      border-color: var(--accent-color);
+    }
+    .action-btn-delete {
+      color: var(--error-color);
+      font-size: 1.1rem;
+      padding: 0.5rem;
+    }
+    .action-btn-delete:hover {
+      transform: scale(1.2);
+    }
+    
+    /* Login Lock Modal */
+    .login-lock-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0b1311;
+      z-index: 2500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .login-lock-card {
+      background-color: var(--primary-color);
+      border: 1px solid var(--accent-color);
+      padding: 3rem 2rem;
+      border-radius: 4px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: var(--shadow-lg);
+    }
+    .login-lock-icon {
+      font-size: 3.5rem;
+      color: var(--accent-color);
+      margin-bottom: 1.5rem;
+    }
+    .login-lock-card h2 {
+      margin-bottom: 0.5rem;
+    }
+    .login-lock-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    @media (max-width: 1024px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .admin-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Secure Login Card (Locked by default, Password: admin123) -->
+  <div class="login-lock-overlay" id="loginLockOverlay">
+    <div class="login-lock-card text-center">
+      <i class="fa-solid fa-user-lock login-lock-icon"></i>
+      <h2>Control Panel Lock</h2>
+      <p>Enter the administrator authorization key to view order list.</p>
+      <form id="adminLoginForm">
+        <div class="form-group" style="text-align: left;">
+          <label for="adminPass">Authorization Password</label>
+          <input type="password" id="adminPass" required placeholder="Enter key (admin123)">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Authenticate Portal</button>
+      </form>
+      <p style="margin-top: 1rem; font-size: 0.75rem;"><a href="/" style="color: var(--accent-color);"><i class="fa-solid fa-arrow-left"></i> Return to Shop</a></p>
+    </div>
+  </div>
+
+  <div class="admin-container">
+    
+    <!-- Top Header -->
+    <header class="admin-header-row">
+      <div>
+        <a href="/" class="admin-logo"><span class="gold-text">ZARA</span> JEWELS</a>
+        <span class="admin-title-badge">Order Dashboard</span>
+      </div>
+      <div>
+        <a href="/" class="btn btn-secondary btn-sm" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;"><i class="fa-solid fa-arrow-left"></i> Back to Store</a>
+        <button class="btn btn-primary btn-sm" id="logoutBtn" style="padding: 0.5rem 1.2rem; font-size: 0.75rem; background-color: #9B2226; border-color: #9B2226;">Lock Dashboard</button>
+      </div>
+    </header>
+
+    <!-- Stats Panel -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-info">
+          <h3>Total Revenue</h3>
+          <div class="stat-val" id="statRevenue">Rs. 0</div>
+        </div>
+        <div class="stat-icon-box"><i class="fa-solid fa-sack-dollar"></i></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-info">
+          <h3>Total Orders</h3>
+          <div class="stat-val" id="statTotalOrders">0</div>
+        </div>
+        <div class="stat-icon-box"><i class="fa-solid fa-truck-ramp-box"></i></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-info">
+          <h3>Pending Approvals</h3>
+          <div class="stat-val" id="statPending">0</div>
+        </div>
+        <div class="stat-icon-box"><i class="fa-solid fa-hourglass-half" style="color: #f39c12;"></i></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-info">
+          <h3>Completed / Shipped</h3>
+          <div class="stat-val" id="statShipped">0</div>
+        </div>
+        <div class="stat-icon-box"><i class="fa-solid fa-circle-check" style="color: #2ecc71;"></i></div>
+      </div>
+    </section>
+
+    <!-- Filter & Search Panel -->
+    <section class="controls-card">
+      <div class="search-input-wrapper">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" class="search-input" id="adminSearchInput" placeholder="Search orders by customer name, phone, or EasyPaisa transaction ID...">
+      </div>
+      <select class="filter-select" id="adminStatusFilter">
+        <option value="All">All Statuses</option>
+        <option value="Pending">Pending</option>
+        <option value="Approved">Approved</option>
+        <option value="Shipped">Shipped</option>
+        <option value="Cancelled">Cancelled</option>
+      </select>
+      <button class="refresh-btn" id="refreshBtn"><i class="fa-solid fa-rotate"></i> Refresh</button>
+    </section>
+
+    <!-- Orders Table -->
+    <section class="table-responsive">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Customer Information</th>
+            <th>Ordered Items</th>
+            <th>Total Amount</th>
+            <th>EasyPaisa TID</th>
+            <th>Order Status</th>
+            <th style="text-align: center;">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="ordersTableBody">
+          <!-- Orders injected dynamically -->
+          <tr>
+            <td colspan="7" style="text-align: center; padding: 3rem;">
+              <div class="spinner" style="width: 30px; height: 30px;"></div>
+              <p style="margin-top: 0.5rem;">Fetching orders list...</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+  <div class="toast-notification" id="toastNotification">
+    <i class="fa-solid fa-user-shield toast-icon"></i>
+    <span class="toast-message" id="toastMessage">Dashboard Loaded</span>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

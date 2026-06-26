@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover exquisite ladies jewelry at Zara Jewels. Shop premium royal gold necklaces, diamond rings, pearl earrings, and custom bridal sets. High-quality craftsmanship and reliable EasyPaisa payment.">
+  <meta name="keywords" content="jewelry, ladies jewelry, gold necklace, bridal set, diamond ring, kundan, jhumka, payal, bangles, zarajewels, pakistan jewelry">
+  <meta name="author" content="Zara Jewels">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zarajewels.pk/">
+  <meta property="og:title" content="Zara Jewels - Premium Ladies Jewelry Collection">
+  <meta property="og:description" content="Shop stunning, luxury ladies jewelry. Emerald & gold collections, kundan, necklaces, bridal sets, and more with nationwide delivery.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Zara Jewels - Premium Ladies Jewelry Collection">
+  <meta property="twitter:description" content="Shop stunning, luxury ladies jewelry. Emerald & gold collections, kundan, necklaces, bridal sets, and more.">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=80">
+
+  <title>Zara Jewels | Premium Ladies Jewelry Collection</title>
+
+  <link rel="canonical" href="https://zarajewels.pk/" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Zara Jewels",
+    "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
+    "@id": "https://zarajewels.pk/#store",
+    "url": "https://zarajewels.pk/",
+    "telephone": "0318-3707098",
+    "priceRange": "PKR 999 - 12999",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Karachi, Pakistan",
+      "addressLocality": "Karachi",
+      "addressRegion": "Sindh",
+      "postalCode": "75500",
+      "addressCountry": "PK"
+    },
+    "paymentAccepted": "Cash on Delivery, EasyPaisa",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <p>✨ Free Shipping Across Pakistan on Orders Above Rs. 5,000! Payment Method: EasyPaisa ✨</p>
+  </div>
+
+  <!-- Header Section -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <a href="/" class="brand-logo">
+          <span class="gold-text">ZARA</span> JEWELS
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#collection" class="nav-link">Collection</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Utility Actions -->
+      <div class="header-actions">
+        <a href="/admin.html" class="admin-link-btn" title="Admin Dashboard">
+          <i class="fa-solid fa-user-shield"></i>
+        </a>
+        <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="View Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Sidebar -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="drawer-header">
+      <h3>MENU</h3>
+      <button class="close-btn" id="closeMobileMenuBtn" aria-label="Close Navigation Menu">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <ul>
+        <li><a href="#hero" class="mobile-link">Home</a></li>
+        <li><a href="#collection" class="mobile-link">Collection</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#testimonials" class="mobile-link">Reviews</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+        <li><a href="/admin.html" class="mobile-link"><i class="fa-solid fa-user-shield"></i> Admin Panel</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="subtitle-badge">Royal Craftsmanship</span>
+      <h1 class="hero-title">Timeless Elegance For <br><span class="gold-gradient-text">Every Beautiful Moment</span></h1>
+      <p class="hero-description">Discover a luxurious collection of necklaces, traditional kundan sets, sterling rings, and custom bangles handcrafted to perfection.</p>
+      <div class="hero-ctas">
+        <a href="#collection" class="btn btn-primary">Shop Collection <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#about" class="btn btn-secondary">Our Story</a>
+      </div>
+    </div>
+    <div class="scroll-down-indicator">
+      <a href="#collection" aria-label="Scroll to collection section">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Value Propositions -->
+  <section class="value-props">
+    <div class="section-container grid-3">
+      <div class="prop-card">
+        <i class="fa-solid fa-gem"></i>
+        <h3>Premium Materials</h3>
+        <p>Crafted with premium 22K gold plating, authentic sterling silver, and AAA+ grade zirconias.</p>
+      </div>
+      <div class="prop-card">
+        <i class="fa-solid fa-truck-fast"></i>
+        <h3>Fast Delivery</h3>
+        <p>Nationwide tracking service with safe, insured dispatch to your doorstep within 3-5 days.</p>
+      </div>
+      <div class="prop-card">
+        <i class="fa-solid fa-credit-card"></i>
+        <h3>Easy Payments</h3>
+        <p>Hassle-free transfers via EasyPaisa with quick transaction ID validation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection / Shop Section -->
+  <section class="collection-section" id="collection">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="gold-text uppercase tracking-widest font-semibold">Exquisite Designs</span>
+        <h2 class="section-title">Shop Our Collection</h2>
+        <p class="section-subtitle">Explore 15 hand-selected masterpieces, organized in 10 luxury categories for your perfect fit.</p>
+      </div>
+
+      <!-- Categories Filter Bar (10 categories + All) -->
+      <div class="category-filter-container">
+        <div class="category-scroll-wrapper">
+          <button class="category-btn active" data-category="Necklaces">Necklaces</button>
+          <button class="category-btn" data-category="Rings">Rings</button>
+          <button class="category-btn" data-category="Earrings">Earrings</button>
+          <button class="category-btn" data-category="Bangles & Bracelets">Bangles & Bracelets</button>
+          <button class="category-btn" data-category="Bridal Sets">Bridal Sets</button>
+          <button class="category-btn" data-category="Chokers">Chokers</button>
+          <button class="category-btn" data-category="Maang Tikka & Passa">Maang Tikka & Passa</button>
+          <button class="category-btn" data-category="Anklets (Payal)">Anklets (Payal)</button>
+          <button class="category-btn" data-category="Jhumkas">Jhumkas</button>
+          <button class="category-btn" data-category="Kundan Jewelry">Kundan Jewelry</button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="product-grid" id="productGrid">
+        <!-- Products will be injected dynamically via JS -->
+        <div class="loader">
+          <div class="spinner"></div>
+          <p>Loading Luxury Collection...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="section-container grid-2 align-center">
+      <div class="about-image-area">
+        <div class="about-img-frame">
+          <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab624?auto=format&fit=crop&w=600&q=80" alt="Exquisite Jewelry Crafting" class="about-img-main">
+          <div class="badge-experience">
+            <span class="exp-years">15+</span>
+            <span class="exp-text">Years of Trust</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="gold-text uppercase font-semibold">Artistry & Legacy</span>
+        <h2 class="section-title text-left">About Zara Jewels</h2>
+        <p class="lead-text">For over a decade, Zara Jewels has been creating traditional Pakistani and contemporary bridal jewelry that tells a story of royalty, culture, and craftsmanship.</p>
+        <p>Every single piece is intricately designed by seasoned goldsmiths, combining age-old Kundan and filigree techniques with modern high-lustre gold plating. We believe that jewelry is not just an accessory—it's an emotion, a keepsake, and an extension of your beauty.</p>
+        <div class="about-features">
+          <div class="feature-item">
+            <i class="fa-solid fa-check"></i>
+            <span>100% Skin Friendly Anti-Tarnish Metal Base</span>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-check"></i>
+            <span>Custom Sizing & Personal Consultation Available</span>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-check"></i>
+            <span>Beautiful Velvet Giftbox Packing</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary mt-2">Get Free Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="gold-text uppercase font-semibold">Client Love</span>
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">We have helped thousands of women shine on their special occasions. Read their reviews.</p>
+      </div>
+
+      <div class="testimonials-slider">
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">"I ordered the Kundan Choker Necklace for my sister's wedding and it was stunning! The finish was extremely premium and looked just like real gold. Highly recommended!"</p>
+          <div class="client-info">
+            <img src="https://images.unsplash.com/photo-1594744803329-e58b31de215f?auto=format&fit=crop&w=100&q=80" alt="Customer review avatar" class="client-avatar">
+            <div>
+              <h4 class="client-name">Ayesha Khan</h4>
+              <span class="client-tag">Verified Buyer - Karachi</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">"The Diamond-Style Silver Ring is absolutely gorgeous! The stone shines beautifully under lights. Delivery took just 3 days to Lahore. Transaction with EasyPaisa was quick."</p>
+          <div class="client-info">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Customer review avatar" class="client-avatar">
+            <div>
+              <h4 class="client-name">Sana Jamil</h4>
+              <span class="client-tag">Verified Buyer - Lahore</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Outstanding service! I had size concerns with the bangles. They guided me through WhatsApp and helped me measure. The Luxury 9-Piece Bridal Set is a complete steal!"</p>
+          <div class="client-info">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="Customer review avatar" class="client-avatar">
+            <div>
+              <h4 class="client-name">Hania Mubeen</h4>
+              <span class="client-tag">Verified Buyer - Islamabad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="newsletter-section">
+    <div class="newsletter-container">
+      <div class="newsletter-card text-center">
+        <i class="fa-regular fa-paper-plane newsletter-icon"></i>
+        <h2>Join The Royal Family</h2>
+        <p>Subscribe to our newsletter to receive updates on new arrivals, VIP sales, and styling tips.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Your Email Address" required class="newsletter-input">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="spam-disclaimer">We respect your privacy. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Support Section -->
+  <section class="contact-section" id="contact">
+    <div class="section-container grid-2">
+      <div>
+        <span class="gold-text uppercase font-semibold">Get In Touch</span>
+        <h2 class="section-title text-left">We'd Love To Hear From You</h2>
+        <p class="mb-2">Have a question about a product, custom sizing, or shipping? Contact our dedicated support team. We reply within minutes!</p>
+        
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <h4>Phone / Support</h4>
+              <p>+92 318 3707098</p>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <h4>Email Address</h4>
+              <p>support@zarajewels.pk</p>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <h4>Main Studio</h4>
+              <p>Clifton Block 5, Karachi, Pakistan</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Live Chat Button -->
+        <a href="https://wa.me/923183707098?text=Hello%20Zara%20Jewels,%20I%20want%20to%20inquire%20about%20your%20jewelry%20collection." target="_blank" class="whatsapp-chat-btn">
+          <i class="fa-brands fa-whatsapp"></i> Chat Live on WhatsApp
+        </a>
+      </div>
+
+      <div class="contact-form-card">
+        <h3>Send A Message</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="contactName">Your Name</label>
+            <input type="text" id="contactName" required placeholder="Enter your full name">
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Your Email</label>
+            <input type="email" id="contactEmail" required placeholder="Enter your email address">
+          </div>
+          <div class="form-group">
+            <label for="contactSubject">Subject</label>
+            <input type="text" id="contactSubject" required placeholder="How can we help?">
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" required rows="5" placeholder="Type your message here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Message <i class="fa-regular fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="footer-top">
+      <div class="section-container footer-grid">
+        <div class="footer-brand-col">
+          <a href="/" class="footer-logo"><span class="gold-text">ZARA</span> JEWELS</a>
+          <p>Handcrafting the finest kundan, silver, and gold-plated designer jewelry for the modern royal woman.</p>
+          <div class="social-links">
+            <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://pinterest.com/" target="_blank" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="https://wa.me/923183707098" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-link-col">
+          <h4>Collection</h4>
+          <ul>
+            <li><a href="#collection">Necklaces</a></li>
+            <li><a href="#collection">Rings</a></li>
+            <li><a href="#collection">Earrings</a></li>
+            <li><a href="#collection">Bridal Sets</a></li>
+            <li><a href="#collection">Kundan Work</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-link-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li><a href="#contact">Contact Support</a></li>
+            <li><a href="#about">About Our Legacy</a></li>
+            <li><a href="#testimonials">Client Testimonials</a></li>
+            <li><a href="#collection">Payment Guide</a></li>
+            <li><a href="#contact">Shipping & Returns</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <h4>Contact & Orders</h4>
+          <p><i class="fa-solid fa-phone-volume"></i> <strong>0318-3707098</strong></p>
+          <p><i class="fa-solid fa-envelope-open-text"></i> support@zarajewels.pk</p>
+          <div class="payment-methods-badges">
+            <span class="badge-label">We Accept:</span>
+            <div class="badges-row">
+              <span class="payment-badge easypaisa-badge">EasyPaisa</span>
+              <span class="payment-badge cod-badge">COD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="section-container flex-space-between">
+        <p>&copy; 2026 Zara Jewels. All rights reserved. Made for <strong>Abdulrehman00000</strong></p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="/admin.html">Admin Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer (Slide out) -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartDrawerTitle">
+    <div class="cart-header">
+      <h3 id="cartDrawerTitle"><i class="fa-solid fa-bag-shopping gold-text"></i> Shopping Cart (<span id="cartCountTitle">0</span>)</h3>
+      <button class="close-btn" id="closeCartBtn" aria-label="Close Shopping Cart">&times;</button>
+    </div>
+    <div class="cart-content" id="cartContent">
+      <!-- Items dynamically added here -->
+      <div class="empty-cart-view" id="emptyCartView">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <p>Your shopping bag is empty.</p>
+        <a href="#collection" class="btn btn-secondary mt-1" id="startShoppingBtn">Start Shopping</a>
+      </div>
+      <div class="cart-items-list" id="cartItemsList"></div>
+    </div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-summary-row">
+        <span>Subtotal:</span>
+        <span class="subtotal-amount" id="cartSubtotal">Rs. 0</span>
+      </div>
+      <p class="shipping-info-text">Shipping calculated at checkout. EasyPaisa payment required.</p>
+      <button class="btn btn-primary btn-block checkout-btn" id="checkoutBtn">Proceed To Checkout <i class="fa-solid fa-credit-card"></i></button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal (EasyPaisa details & verification Form) -->
+  <div class="checkout-modal-overlay" id="checkoutModalOverlay">
+    <div class="checkout-modal">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-circle-check gold-text"></i> Secure Checkout</h2>
+        <button class="close-btn" id="closeCheckoutModalBtn" aria-label="Close Checkout Window">&times;</button>
+      </div>
+      <div class="modal-body">
+        
+        <!-- EasyPaisa Details Area -->
+        <div class="easypaisa-info-box">
+          <div class="easypaisa-header-row">
+            <span class="ep-logo">easy<span class="green-text">paisa</span></span>
+            <span class="badge-payment">Primary Method</span>
+          </div>
+          <p class="ep-instructions">Please send the exact order total amount to the EasyPaisa account below:</p>
+          <div class="ep-account-details">
+            <div class="detail-row">
+              <span class="lbl">Account Holder:</span>
+              <span class="val font-semibold">Fariz / Zara Jewels</span>
+            </div>
+            <div class="detail-row">
+              <span class="lbl">Account Number:</span>
+              <span class="val account-num font-semibold" id="easypaisaNumber">03183707098</span>
+            </div>
+          </div>
+          <button class="copy-btn" id="copyEpNumberBtn"><i class="fa-regular fa-copy"></i> Copy Account Number</button>
+          <span class="copied-indicator" id="copySuccessMsg">Copied!</span>
+        </div>
+
+        <div class="order-total-summary-card">
+          <span>Amount To Pay:</span>
+          <span class="modal-total-amount" id="modalTotalAmount">Rs. 0</span>
+        </div>
+
+        <!-- Checkout Form -->
+        <form class="checkout-form" id="checkoutForm">
+          <h3>Customer & Payment Details</h3>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="custName">Full Name</label>
+              <input type="text" id="custName" required placeholder="Ayesha Khan">
+            </div>
+            <div class="form-group">
+              <label for="custPhone">Phone Number</label>
+              <input type="tel" id="custPhone" required placeholder="03XXXXXXXXX">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="custAddress">Shipping Address</label>
+            <input type="text" id="custAddress" required placeholder="House#, Street, Area, City">
+          </div>
+          <div class="form-group">
+            <label for="custTxnId">EasyPaisa Transaction ID (TID)</label>
+            <input type="text" id="custTxnId" required placeholder="Enter the 11-digit Transaction ID">
+            <span class="field-hint">TID from your EasyPaisa payment SMS/Receipt (e.g. 24891012345)</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="submitOrderBtn">Place Order & Validate Payment <i class="fa-solid fa-circle-check"></i></button>
+        </form>
+
+        <!-- Backup WhatsApp Checkout -->
+        <div class="whatsapp-backup-option">
+          <p>Prefer sharing proof directly? Place order via WhatsApp instead:</p>
+          <button class="whatsapp-direct-order-btn" id="whatsappDirectBtn">
+            <i class="fa-brands fa-whatsapp"></i> Checkout via WhatsApp Chat
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Success Modal -->
+  <div class="success-modal-overlay" id="successModalOverlay">
+    <div class="success-modal text-center">
+      <i class="fa-regular fa-circle-check success-icon"></i>
+      <h2>Order Placed Successfully!</h2>
+      <p class="success-message">Thank you for shopping with Zara Jewels. We are validating your transaction ID: <strong id="successTid">N/A</strong>. Your order is now <span class="status-badge-pending">Pending</span> approval.</p>
+      <div class="success-summary">
+        <p><strong>Name:</strong> <span id="successName">N/A</span></p>
+        <p><strong>Total Amount:</strong> <span id="successTotal">N/A</span></p>
+      </div>
+      <p class="support-text">A confirmation message has been logged. Feel free to contact our customer support for updates.</p>
+      <button class="btn btn-primary mt-2" id="successCloseBtn">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- Custom Notification Toast -->
+  <div class="toast-notification" id="toastNotification">
+    <i class="fa-solid fa-gem toast-icon"></i>
+    <span class="toast-message" id="toastMessage">Item added to bag</span>
+  </div>
+
+  <!-- Global scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
